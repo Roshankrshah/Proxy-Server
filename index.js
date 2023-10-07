@@ -18,7 +18,7 @@ app.set('trust proxy',1)
 
 app.use(express.static('public'));
 
-app.get('/',router);
+app.use('/api',router);
 
 app.use(errorHandler);
 
