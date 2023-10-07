@@ -1,15 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const router = require('./routes/index');
 const errorHandler = require('./middlewares/error');
 const app = express();
 
 app.use(cors());
 
 app.use(express.static('public'));
-app.get('/',(req,res)=>{
-    res.send('Starting proxy server project');
-})
+
+app.get('/',router);
 
 app.use(errorHandler);
 
